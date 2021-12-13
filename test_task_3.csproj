@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Version>1.0.0.0</Version>
+    <Authors>bagmanov ruslan</Authors>
+    <Company>bagmanov inc</Company>
+    <PackageProjectUrl>https://gitub.com/daizygod</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="sites.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="files\sites.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
