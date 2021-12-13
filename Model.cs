@@ -160,9 +160,12 @@ namespace test_task_3
                 bool parsed = int.TryParse(delay, out int delayParse);
                 if (parsed)
                 {
-                    if (delayParse > 30000 && delayParse < 10)
+                    if (delayParse > 30000 || delayParse <= 9)
                     {
                         delay = "60";
+                    } else
+                    {
+                        delay = delayParse.ToString();
                     }
                 } else delay = "60";
 
@@ -225,7 +228,7 @@ namespace test_task_3
                     bool parsed = int.TryParse(delay, out int delayParse);
                     if (parsed)
                     {
-                        if (delayParse > 30000 && delayParse < 10)
+                        if (delayParse > 30000 || delayParse <= 9)
                         {
                             delay = "60";
                         }
